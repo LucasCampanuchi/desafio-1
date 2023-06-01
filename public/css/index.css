@@ -58,7 +58,7 @@ body {
 }
 
 .card__right img {
-  content: url("/public/assets/images/illustration-sign-up-desktop.svg");
+  content: url("/assets/images/illustration-sign-up-desktop.svg");
 }
 
 @media screen and (max-width: 400px) {
@@ -80,7 +80,7 @@ body {
   }
 
   .card__right img {
-    content: url("/public/assets/images/illustration-sign-up-mobile.svg");
+    content: url("/assets/images/illustration-sign-up-mobile.svg");
   }
 
   .card__left {
@@ -127,7 +127,7 @@ body {
   display: inline-block;
   height: 15px;
   width: 15px;
-  background-image: url("/public/assets/images/icon-success.svg");
+  background-image: url("/assets/images/icon-success.svg");
   background-repeat: no-repeat;
   background-size: contain;
   margin-right: 0.5rem;
