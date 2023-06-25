@@ -12,45 +12,82 @@
 
     <link rel="stylesheet" href="css/index.css" />
     <script src="js/index.js"></script>
+
     <title>Desafio</title>
   </head>
   <body>
     <main class="main">
-      <div class="card">
-        <div class="card__left">
-          <h2 class="card__title">Stay updated!</h2>
-          <p class="card__text">
-            Join 60,000+ product managers receiving monthly updates on:
-          </p>
+      <section class="section__form visible active">
+        <div class="card">
+          <div class="card__left">
+            <h2 class="card__title">Stay updated!</h2>
+            <p class="card__text">
+              Join 60,000+ product managers receiving monthly updates on:
+            </p>
 
-          <ul class="card__list">
-            <li>Product discovery and building what matters</li>
-            <li>Measuring to ensure updates are a success</li>
-            <li>And much more!</li>
-          </ul>
+            <ul class="card__list">
+              <li>Product discovery and building what matters</li>
+              <li>Measuring to ensure updates are a success</li>
+              <li>And much more!</li>
+            </ul>
 
-          <form class="form" id="form">
-            <div class="form__control">
-              <label for="email" class="form__label">Email address</label>
+            <form class="form" id="form">
+              <div class="form__control">
+                <label for="email" class="form__label">Email address</label>
 
-              <input
-                name="email"
-                type="text"
-                id="email"
-                class="form__input"
-                placeholder="ash@loremcompany.com"
+                <input
+                  name="email"
+                  type="text"
+                  id="email"
+                  class="form__input"
+                  placeholder="ash@loremcompany.com"
+                />
+              </div>
+
+              <button class="form__button" type="submit">
+                Subscribe to monthly newsletter
+              </button>
+            </form>
+          </div>
+          <div class="card__right">
+            <picture>
+              <source
+                srcset="assets/images/illustration-sign-up-desktop.svg"
+                media="(min-width: 800px)"
               />
-            </div>
+              <img
+                src="assets/images/illustration-sign-up-mobile.svg"
+                alt="figure card"
+                class="card__img"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
 
-            <button class="form__button" type="submit">
-              Subscribe to monthly newsletter
-            </button>
-          </form>
+      <section class="section__success">
+        <div class="card">
+          <div class="card__top">
+            <img
+              src="assets/images/icon-success.svg"
+              alt=""
+              class="card__icon"
+            />
+
+            <h2 class="card__title">Thanks for subscribing!</h2>
+
+            <p class="card__text">
+              A confirmation email has been sent to
+              <b><span id="email-display"></span></b>. Please open it and click
+              the button inside to confirm your subscription.
+            </p>
+          </div>
+
+          <div class="card__bottom">
+            <button class="form__button" id="dismiss">Dismiss Message</button>
+          </div>
         </div>
-        <div class="card__right">
-          <img class="card__img" alt="sign up" />
-        </div>
-      </div>
+      </section>
     </main>
   </body>
 </html>

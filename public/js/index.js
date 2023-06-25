@@ -1,28 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
   validateForm();
-
-  const email = document.querySelector("#email");
-  email.addEventListener("input", function (event) {
-    setEmailError(false);
-  });
+  dismiss();
 });
 
 const validateForm = () => {
   const form = document.querySelector("#form");
+  const email = document.querySelector("#email");
+
+  email.addEventListener("input", function (event) {
+    setEmailError(false);
+  });
+
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const email = document.querySelector("#email");
     const regex = /\S+@\S+\.\S+/;
 
-    console.log("Email: ", regex.test(email.value));
-
     if (email.value === "" || !regex.test(email.value)) {
-      console.log("Email is invalid");
       setEmailError(true);
-    } else {
-      window.location.href = `success.html?email=${email.value}`;
+      return;
     }
+
+    setVisible();
+    setActive();
+
+    email.value = "";
+    document.querySelector("#email-display").innerHTML = email.value;
   });
 };
 
@@ -33,8 +36,30 @@ setEmailError = (set) => {
   if (set) {
     email.classList.add("error");
     label.classList.add("error");
-  } else {
-    email.classList.remove("error");
-    label.classList.remove("error");
+    return;
   }
+
+  email.classList.remove("error");
+  label.classList.remove("error");
+};
+
+setVisible = () => {
+  document.querySelector(".section__form").classList.toggle("visible");
+  document.querySelector(".section__success").classList.toggle("visible");
+};
+
+setActive = () => {
+  setTimeout(() => {
+    document.querySelector(".section__form").classList.toggle("active");
+    document.querySelector(".section__success").classList.toggle("active");
+  }, 100);
+};
+
+dismiss = () => {
+  const dismissButton = document.querySelector("#dismiss");
+
+  dismissButton.addEventListener("click", function (event) {
+    setVisible();
+    setActive();
+  });
 };
